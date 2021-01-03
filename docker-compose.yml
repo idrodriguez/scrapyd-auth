@@ -1,0 +1,18 @@
+version: '3'
+services:
+  el-gangazo-scrapyd:
+    image: 'idrodriguez/scrapyd-auth:latest'
+    restart: always
+    ports:
+      - '6800:80'
+    volumes:
+      - scrapy_lib:/var/lib/scrapyd
+      - scrapy_log:/var/log/scrapyd
+      - scrapy_etc:/etc/scrapyd
+    env_file:
+      - .env-file
+
+volumes:
+  scrapy_lib:
+  scrapy_log:
+  scrapy_etc:

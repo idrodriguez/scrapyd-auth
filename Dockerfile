@@ -3,14 +3,14 @@ FROM python:3-alpine
 WORKDIR /code
 VOLUME ["/etc/scrapyd/", "/var/lib/scrapyd/", "/var/log/scrapyd/"]
 
-RUN apk add --update \
+RUN apk add --update --no-cache \
   gcc \
   musl-dev \
   libffi-dev \
   libxml2-dev \
   libxslt-dev \
   openssl-dev \
-  python-dev \
+  python3-dev \
   musl-dev
 
 # scrapyd install & Setup
